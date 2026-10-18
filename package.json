@@ -1,0 +1,17 @@
+{
+  "name": "food-store-evaluacion1",
+  "version": "1.0.0",
+  "description": "Evaluación 1 - Programación 3: Sistema de catálogo, búsqueda, filtrado y carrito con TypeScript y Vite",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.0"
+  }
+}

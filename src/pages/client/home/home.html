@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store - Catálogo</title>
+    <link rel="stylesheet" href="../../../../css/login.css">
+    <script>
+        (function() {
+            const userData = JSON.parse(localStorage.getItem('userData') || 'null');
+            if (!userData) window.location.href = '../../../../login.html';
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Food Store</h1>
+        <nav>
+            <ul>
+                <li><a href="../../../../index.html">Catálogo</a></li>
+                <li><a href="../cart/cart.html">Carrito <span id="cart-badge" class="badge-cart">0</span></a></li>
+                <li><a href="../../../../admin.html">Panel Admin</a></li>
+                <li><a href="#" id="btn-logout" style="color: #ffc0cb; font-weight: bold;">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="layout-container">
+        <aside>
+            <h2>Categorías</h2>
+            <ul id="lista-categorias"></ul>
+        </aside>
+
+        <main class="main-content">
+            <form id="form-buscar" class="search-box">
+                <input type="text" placeholder="Buscar por nombre..." id="buscarProducto">
+                <button type="submit">Buscar</button>
+            </form>
+
+            <section>
+                <h2>Catálogo de Productos</h2>
+                <br>
+                <div id="contenedor-productos" class="grid-productos"></div>
+            </section>
+        </main>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; color: #777;">
+        <p>&copy; 2026 Food Store. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module" src="../../../main.ts"></script>
+    <script type="module" src="home.ts"></script>
+</body>
+</html>

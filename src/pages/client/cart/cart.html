@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store - Mi Carrito</title>
+    <link rel="stylesheet" href="../../../../css/login.css">
+    <script>
+        (function() {
+            const userData = JSON.parse(localStorage.getItem('userData') || 'null');
+            if (!userData) window.location.href = '../../../../login.html';
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Food Store</h1>
+        <nav>
+            <ul>
+                <li><a href="../../../../index.html">Catálogo</a></li>
+                <li><a href="cart.html">Carrito <span id="cart-badge" class="badge-cart">0</span></a></li>
+                <li><a href="../../../../admin.html">Panel Admin</a></li>
+                <li><a href="#" id="btn-logout" style="color: #ffc0cb; font-weight: bold;">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 1000px; margin: 2rem auto; padding: 1rem;">
+        <section>
+            <h2>Mi Carrito de Compras</h2>
+            <br>
+            <div id="contenedor-carrito"></div>
+
+            <div id="resumen-carrito" class="cart-summary" style="margin-top: 1.5rem; display: none;">
+                <div>
+                    <button id="btn-vaciar" style="background-color: #888; width: auto; font-size: 14px; margin: 0;">Vaciar Carrito</button>
+                </div>
+                <div style="text-align: right;">
+                    <span>Total a pagar: </span>
+                    <span id="total-precio" class="total">$0</span>
+                    <br><br>
+                    <button id="btn-checkout" style="width: auto; padding: 12px 24px; font-size: 16px; margin: 0;">Finalizar Compra</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; color: #777;">
+        <p>&copy; 2026 Food Store. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module" src="../../../main.ts"></script>
+    <script type="module" src="cart.ts"></script>
+</body>
+</html>

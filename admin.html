@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <script>
+        (function() {
+            const userData = JSON.parse(localStorage.getItem('userData') || 'null');
+            if (!userData || userData.rol !== 'admin') window.location.href = 'login.html';
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Panel de Administración</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Volver a la Tienda</a></li>
+                <li><a href="#" id="btn-logout" style="color: #ffc0cb; font-weight: bold;">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 1000px; margin: 2rem auto; padding: 1rem;">
+        <section>
+            <h2>Gestión de Productos</h2>
+            <br>
+            <button type="button" style="width: auto; padding: 8px 16px;">+ Nuevo Producto</button>
+            <br><br>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-admin-productos"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; color: #777;">
+        <p>&copy; 2026 Food Store. Panel de Administración.</p>
+    </footer>
+
+    <script type="module" src="src/main.ts"></script>
+    <script type="module" src="src/pages/admin/admin.ts"></script>
+</body>
+</html>
